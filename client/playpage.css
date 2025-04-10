@@ -1,0 +1,20 @@
+:root{
+    --background--color: rgb(54, 124, 54);
+    --score--color: rgb(65, 65, 65);
+    --accent--color: rgb(201, 160, 73);
+
+}
+.body{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100vh;
+}
+.gameinfo{
+    background-color: var(--score--color);
+    width: 20%;
+}
+.board{
+    background-color: var(--background--color);
+    width: 80%;
+}
