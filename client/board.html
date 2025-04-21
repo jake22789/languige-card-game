@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="playpage.css"/>
+    <link rel="stylesheet" href="playpage.css" />
+    <script type="module" src="javasccript/board-ui.js"></script>
 </head>
-<body class = "body">
+
+<body class="body">
     <article class="gameinfo">
-        <div id = "title"> title</div>
-        <div id = "reqirement">
-            
-                <img src="https://cdn.pixabay.com/photo/2014/04/02/17/03/skull-307778_640.png" alt="skull and bones">
-            
+        <div id="title"> title</div>
+        <div id="reqirement">
+
+            <img src="https://cdn.pixabay.com/photo/2014/04/02/17/03/skull-307778_640.png" alt="skull and bones">
+
             <div>
                 <div>
                     score at least
                 </div>
-                <div id = "targetnum">
+                <div id="targetnum">
                     "number"
                 </div>
                 <div>
@@ -25,24 +28,24 @@
                 </div>
             </div>
         </div>
-        <div id ="score">
+        <div id="score">
             <div>score</div>
-            <div id="scoredisplay"></div> 
+            <div id="scoredisplay"></div>
         </div>
-        <div id = "select-hand"> flush</div>
-        <div class="buttons-and-stuff" > 
+        <div id="select-hand"> flush</div>
+        <div class="buttons-and-stuff">
             <div class="columncontaier-left">
                 <div>run info</div>
                 <div>options</div>
             </div>
             <div class="columncontaier-right">
-                
-                <div class ="rowcontainer">
+
+                <div class="rowcontainer">
                     <div>hands</div>
                     <div>discards</div>
                 </div>
                 <div>words</div>
-                <div class ="rowcontainer">
+                <div class="rowcontainer">
                     <div>dificulty</div>
                     <div>round</div>
                 </div>
@@ -51,8 +54,14 @@
 
     </article>
     <article class="board">
-
+        <div class="topRow">
+            <div id ="modifiers">modifiers</div>
+            <div id="invintory">inventory</div>
+        </div>
+        <div id="selected">selected</div>
+        <div id="hand">hand</div>
     </article>
-    
+
 </body>
+
 </html>

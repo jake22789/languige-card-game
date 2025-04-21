@@ -1,5 +1,6 @@
 :root{
     --background--color: rgb(54, 124, 54);
+    --place--background--color: rgb(88, 128, 88);
     --score--color: rgb(65, 65, 65);
     --accent--color: rgb(139, 111, 51);
     --text--color:rgb(14, 31, 14);
@@ -99,6 +100,42 @@
 
 }
 .board{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--background--color);
     width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+#modifiers{
+ background-color: var(--place--background--color);
+ width: 65%;
+ height: 10rem;
+
+}
+#invintory{
+    background-color: var(--place--background--color);
+    width: 30%;
+    height: 10rem;
+}
+#selected{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--place--background--color);
+    width: 80%;
+    height: 10rem;
+}
+#hand{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--place--background--color);
+    width: 80%;
+    height: 10rem;
+}
+.topRow{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
