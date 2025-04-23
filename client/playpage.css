@@ -1,6 +1,6 @@
 :root{
     --background--color: rgb(54, 124, 54);
-    --place--background--color: rgb(88, 128, 88);
+    --place--background--color: rgba(214, 221, 214, 0.288);
     --score--color: rgb(65, 65, 65);
     --accent--color: rgb(139, 111, 51);
     --text--color:rgb(14, 31, 14);
@@ -127,9 +127,11 @@
     width: 80%;
     height: 10rem;
 }
-#hand{
+.handContainer{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--place--background--color);
     width: 80%;
     height: 10rem;
@@ -138,4 +140,19 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+}
+#hand{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+.card{
+    background-color: var(--light--text--color);
+    width: 15%;
+    height: 90%;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

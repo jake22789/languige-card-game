@@ -1,3 +1,5 @@
+
+
 function addevents(){
     const playButtonElement = document.getElementById("play");
     const settingsButtonElement = document.getElementById("settings");
