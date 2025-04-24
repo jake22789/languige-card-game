@@ -1,6 +1,6 @@
 export function buildcard(word,points){
     const pointsElement = document.createElement("div");
-    pointsElement.textContent = points;
+    pointsElement.textContent = "";
     const card = document.createElement("div");
     card.classList = "card";
     card.draggable=true;

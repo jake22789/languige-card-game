@@ -84,7 +84,7 @@ function calculateScore() {
     }
     if (handnumber <= 0) {
         alert("Game Over! You have no more hands left.");
-        // Optionally, you can reset the game or take other actions here.
+        location.reload(); // Reload the page to reset the game
     }
     //console.log(number);
 }
