@@ -2,8 +2,9 @@ import { buildcard } from "./domain.js";
 import {fetchHand} from "./service.js";
 
 var handList = await fetchHand();
-
+var level = 1;
 var selectedList = [];
+var handnumber=10;
 async function drawHand(){
         const handElement = document.getElementById("hand");
         handElement.replaceChildren();
@@ -49,15 +50,18 @@ drawHand();
 
 function renderGameInfo(){
     const score = document.getElementById("scoredisplay");
-    const group = document.getElementById("select-hand");
     const targetscore = document.getElementById("targetnum");
+    const handElement = document.getElementById("handnumber");
 
+    handElement.textContent = handnumber;
     score.textContent = "0";
-    group.textContent = "todo";
-    targetscore.textContent="100";
+    
+    targetscore.textContent= 100 * level;
 }
 function calculateScore() {
     const scoreElement = document.getElementById("scoredisplay");
+    const handElement = document.getElementById("handnumber");
+    handElement.textContent = handnumber;
     let number = parseInt(scoreElement.textContent, 10) || 0;
 
     const idCount = {};
@@ -72,6 +76,16 @@ function calculateScore() {
     }
 
     scoreElement.textContent = Math.max(number, 0).toString(); // Ensure score doesn't go below 0
+    if (number > 100) {
+        alert("beat this level! moving to next level!");
+        handnumber +=(10-level);
+        level++;
+        renderGameInfo();   
+    }
+    if (handnumber <= 0) {
+        alert("Game Over! You have no more hands left.");
+        // Optionally, you can reset the game or take other actions here.
+    }
     //console.log(number);
 }
 function addEventliseners(){
@@ -100,6 +114,7 @@ function addEventliseners(){
         selectedList = [];
         handList = await fetchHand(); 
         drawHand();
+        handnumber--;
 
     });
     List.addEventListener("dragover", (e) => {
