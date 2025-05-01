@@ -26,3 +26,14 @@ body{
     }
  
 }
+.login{
+    color: rgb(213, 214, 213);
+    background-color: var(--score--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+}

@@ -62,6 +62,7 @@ var app = builder.Build();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/deck",()=>{
+    return starter.drawpile;
 
 });
 app.MapGet("/hand",()=>{
@@ -75,6 +76,10 @@ app.MapGet("/hand",()=>{
     starter.hand.Add(draw.Pop());  
     }
     return starter.hand;
+});
+app.MapPost("/makecard/{normalWord}/{translated}",(string normalWord,string translated)=>{
+    starter.drawpile.Add(new Flashcard(starter.drawpile.Count+1,normalWord,translated));
+    
 });
 
 app.Run();
