@@ -4,6 +4,7 @@ import { sendNewCard } from "./service.js";
 function addevents(){
     const playButtonElement = document.getElementById("play");
     const settingsButtonElement = document.getElementById("settings");
+    const quitButtonElement = document.getElementById("quit");
     settingsButtonElement.addEventListener("click",(e)=>{
         const boardElement = document.getElementById("page");
         boardElement.replaceChildren();
@@ -70,6 +71,9 @@ function addevents(){
     });
     });
     
+    quitButtonElement.addEventListener("click",(e)=>{
+        self.close();
+    });
     console.log(playButtonElement);
     playButtonElement.addEventListener("click",(e)=>{
         window.location.href = "board.html";
