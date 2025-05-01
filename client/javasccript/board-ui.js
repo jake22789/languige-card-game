@@ -63,6 +63,7 @@ function calculateScore() {
     const handElement = document.getElementById("handnumber");
     handElement.textContent = handnumber;
     let number = parseInt(scoreElement.textContent, 10) || 0;
+    const oldnumber = number;
 
     const idCount = {};
     selectedList.forEach(card => {
@@ -78,13 +79,20 @@ function calculateScore() {
     scoreElement.textContent = Math.max(number, 0).toString(); // Ensure score doesn't go below 0
     if (number > 100) {
         alert("beat this level! moving to next level!");
-        handnumber +=(10-level);
+        handnumber +=(10+level);
         level++;
         renderGameInfo();   
     }
     if (handnumber <= 0) {
         alert("Game Over! You have no more hands left.");
         location.reload(); // Reload the page to reset the game
+    }
+    if (number == oldnumber) {
+        const containerElement = document.getElementById("container");
+        containerElement.style.backgroundColor = "rgb(230, 68, 63)";
+        setTimeout(() => {
+            containerElement.style.backgroundColor = "rgba(214, 221, 214, 0.288)";
+        }, 1000); // Change back to white after 1 second
     }
     //console.log(number);
 }
